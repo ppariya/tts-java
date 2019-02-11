@@ -17,15 +17,19 @@ public class RockPaperScissor {
 //    When one player wins 3 rounds, announce that player's name as the game winner
 //    Push the code to our class GitHub Repo
 //            See below for all possible winning outcomes
-    static Scanner reader = new Scanner(System.in);
-    static List<String> weapons = new ArrayList<>();
-    static List<String> players = new ArrayList<>();
-    static Map<String, Integer> scores = new HashMap<>();
-    static Random random = new Random();
-    static int input;
-    static int rand;
-    static String currentPlayer = "";
-    private static void player(){
+    Scanner reader = new Scanner(System.in);
+    List<String> weapons = new ArrayList<>();
+
+    List<String> players = new ArrayList<>();
+    Map<String, Integer> scores = new HashMap<>();
+    Random random = new Random();
+    int input;
+    int rand;
+    String currentPlayer = "";
+    public void player(){
+        weapons.add("Rock");
+        weapons.add("Paper");
+        weapons.add("Scissor");
         System.out.println("Enter your name");
         String name = reader.nextLine();
         players.add(name);
@@ -35,7 +39,7 @@ public class RockPaperScissor {
         scores.put("AI", 0);
     }
 
-    private static void choice(){
+    public void choice(){
         System.out.println("Please choose: \n0. Rock\n1. Paper\n2. Scissor");
         input = Integer.parseInt(reader.nextLine());
         rand = random.nextInt(3);
@@ -43,7 +47,7 @@ public class RockPaperScissor {
 
     }
 
-    private static void result() {
+    public void result() {
         if (input == rand) {
             System.out.println("Your weapon: " + weapons.get(input));
             System.out.println("AI weapon: " + weapons.get(rand));
@@ -65,25 +69,29 @@ public class RockPaperScissor {
         }
     }
 
-        private static void winner(){
-            if(scores.get(currentPlayer) == 3){
-                System.out.println("Winner is " + currentPlayer);
+    public void winner(){
+        if(scores.get(currentPlayer) == 3){
+            System.out.println("Winner is " + currentPlayer);
 
-            } else if (scores.get("AI") == 3){
-                System.out.println("Winner is AI");
-            }
+        } else if (scores.get("AI") == 3){
+            System.out.println("Winner is AI");
         }
+    }
 
-    public static void main(String[] args){
-            weapons.add("Rock");
-            weapons.add("Paper");
-            weapons.add("Scissor");
-
+    public void start(){
             player();
             while (scores.get(currentPlayer) < 3 && scores.get("AI") < 3) {
                 choice();
                 result();
             }
             winner();
-        }
+    }
+
+    public RockPaperScissor(){
+
+    }
+    public static void main(String[] args){
+
+    }
+
 }
