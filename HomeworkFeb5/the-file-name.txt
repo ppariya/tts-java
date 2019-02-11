@@ -1,0 +1,1 @@
+wheels: 5 doors: 4 transmission: 4fgsrg fuel: 34ffdgdsg engine: fdg tire: 33.0 brand: feg sunRoof: true
