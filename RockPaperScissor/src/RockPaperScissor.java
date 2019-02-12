@@ -26,6 +26,7 @@ public class RockPaperScissor {
     int input;
     int rand;
     String currentPlayer = "";
+
     public void player(){
         weapons.add("Rock");
         weapons.add("Paper");
@@ -87,11 +88,5 @@ public class RockPaperScissor {
             winner();
     }
 
-    public RockPaperScissor(){
-
-    }
-    public static void main(String[] args){
-
-    }
 
 }
